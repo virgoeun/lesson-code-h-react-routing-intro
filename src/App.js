@@ -14,6 +14,8 @@ function App() {
         <Route exact path="/" component={HomePage} />
         <Route path="/about" component={AboutPage} />
         <Route path="/projects" component={ProjectsPage} />
+
+        <Route component={ErrorPage} />                      {/*   <== ADD   */}
       </Switch>
     </div>
   );
