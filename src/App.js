@@ -5,9 +5,9 @@ import AboutPage from "./pages/AboutPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import ErrorPage from "./pages/ErrorPage";
 import { Switch, Route } from "react-router-dom";
+import HomePageWithRedirect from "./pages/HomePageWithRedirect";
 
-import HomePageWithRedirect from "./pages/HomePageWithRedirect";  // <== IMPORT 
-
+import projectsData from './projects-data.json';     // <== IMPORT 
 
 function App() {
   return (
@@ -15,10 +15,16 @@ function App() {
       <Navbar />
       <Switch>
         {/* <Route exact path="/" component={HomePage} /> */}
-        <Route exact path="/" component={HomePageWithRedirect} />  {/*   <== ADD   */}
-
+        <Route exact path="/" component={HomePageWithRedirect} />
         <Route path="/about" component={AboutPage} />
-        <Route path="/projects" component={ProjectsPage} />
+        {/* <Route path="/projects" component={ProjectsPage} /> */}
+
+        <Route
+          path="/projects"
+          render={(routeProps) => {
+            return <ProjectsPage {...routeProps} projects={projectsData} />;
+          }}
+        />
 
         <Route component={ErrorPage} />
       </Switch>
