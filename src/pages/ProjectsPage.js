@@ -1,15 +1,14 @@
 import { useState, useEffect } from "react";
-// import projectsData from "./../projects-data.json";  // <== REMOVE
 
-function ProjectsPage (props) {                    // <== UPDATE
+function ProjectsPage (props) {
   const [projects, setProjects] = useState([]);
 
   // This effect depends on `props.projectsData`.
   // It will run on initial render, and every time
   // when the `props.projectsData` updates.
   useEffect(() => {
-    setProjects(props.projectsData);                 // <== UPDATE
-  }, [props.projectsData]);                       // <== UPDATE
+    setProjects(props.projectsData);
+  }, [props.projectsData]);
 
 
   return (
