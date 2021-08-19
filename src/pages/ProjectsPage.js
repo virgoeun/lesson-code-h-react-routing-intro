@@ -7,8 +7,8 @@ function ProjectsPage (props) {
   // It will run on initial render, and every time
   // when the `props.projectsData` updates.
   useEffect(() => {
-    setProjects(props.projectsData);
-  }, [props.projectsData]);
+    setProjects(props.projects);
+  }, [props.projects]);
 
 
   return (
