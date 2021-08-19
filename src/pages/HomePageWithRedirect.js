@@ -6,7 +6,7 @@ const imgURL =
 
   
 function HomePageWithRedirect() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   if (!isLoggedIn) return <Redirect to="/error" />;
 

@@ -14,8 +14,8 @@ function App() {
     <div className="App">
       <Navbar />
       <Switch>
-        <Route exact path="/" component={HomePage} />
-        {/* <Route exact path="/" component={HomePageWithRedirect} /> */}
+        {/* <Route exact path="/" component={HomePage} /> */}
+        <Route exact path="/" component={HomePageWithRedirect} />
         <Route path="/about" component={AboutPage} />
         {/* <Route path="/projects" component={ProjectsPage} /> */}
 
