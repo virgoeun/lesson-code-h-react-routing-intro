@@ -20,6 +20,7 @@ function App() {
         {/* <Route path="/projects" component={ProjectsPage} /> */}
 
         <Route
+          exact
           path="/projects"
           render={(routeProps) => {
             return <ProjectsPage {...routeProps} projects={projectsData} />;

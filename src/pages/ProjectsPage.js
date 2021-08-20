@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 function ProjectsPage (props) {
   const [projects, setProjects] = useState([]);
 
-  // This effect depends on `props.projectsData`.
-  // It will run on initial render, and every time
-  // when the `props.projectsData` updates.
+  // This effect depends on `props.projects`.
+  // It will run on initial render and every time
+  // when the `props.projects` gets updated.
   useEffect(() => {
-    setProjects(props.projectsData);
-  }, [props.projectsData]);
+    setProjects(props.projects);
+  }, [props.projects]);
 
 
   return (
