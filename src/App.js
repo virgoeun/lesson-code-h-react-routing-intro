@@ -4,31 +4,29 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import ErrorPage from "./pages/ErrorPage";
-import { Switch, Route } from "react-router-dom";
-import HomePageWithRedirect from "./pages/HomePageWithRedirect";
+import HomePageWithNavigate from "./pages/HomePageWithNavigate";
+import { Routes, Route } from "react-router-dom";
 
-import projectsData from './projects-data.json';     // <== IMPORT 
+import projectsData from './projects-data.json';
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Switch>
-        {/* <Route exact path="/" component={HomePage} /> */}
-        <Route exact path="/" component={HomePageWithRedirect} />
-        <Route path="/about" component={AboutPage} />
-        {/* <Route path="/projects" component={ProjectsPage} /> */}
+      
+      <Routes>
+        {/* <Route  path="/" element={ <HomePage /> } /> */}
 
+        <Route path="/" element={ <HomePageWithNavigate /> } />
+        <Route path="/about" element={ <AboutPage /> } />
+        
         <Route
-          exact
           path="/projects"
-          render={(routeProps) => {
-            return <ProjectsPage {...routeProps} projects={projectsData} />;
-          }}
+          element={ <ProjectsPage projects={projectsData} /> }
         />
 
-        <Route component={ErrorPage} />
-      </Switch>
+        <Route path="*" element={ <ErrorPage /> } />
+      </Routes>
     </div>
   );
 }
