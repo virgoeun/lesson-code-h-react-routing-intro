@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 
 function ProjectsPage (props) {
+  console.log("Project Props:", props)
   const [projects, setProjects] = useState([]);
 
   // This effect depends on `props.projects`.
   // It will run on initial render and every time
   // when the `props.projects` gets updated.
   useEffect(() => {
+    console.log("useEffect Rendering mounting")
     setProjects(props.projects);
   }, [props.projects]);
 
